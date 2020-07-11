@@ -20,7 +20,8 @@ const fetchlocation = (address,callback)=>{
         {
             //console.log(data)
             message1.textContent = data.location
-            message2.textContent = data.forecast
+            message2.textContent = data.forecastDesc
+            message3.textContent = data.forecastHumedity
         }
     })
 })
@@ -31,12 +32,14 @@ const search = document.querySelector('input')
 
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
+const message3 = document.querySelector('#message-3')
 
 weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault()
 
     message1.textContent = '...'
     message2.textContent = ''
+    message3.textContent = ''
     const location = search.value
 
     
